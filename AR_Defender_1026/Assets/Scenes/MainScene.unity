@@ -97,7 +97,7 @@ NavMeshSettings:
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
-    agentSlope: 45
+    agentSlope: 34.8
     agentClimb: 0.4
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
@@ -205,6 +205,10 @@ Prefab:
         type: 2}
       propertyPath: hitOffset.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630599865279924, guid: 2c5ba6db6e8fea946942eea400fadb83, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2c5ba6db6e8fea946942eea400fadb83, type: 2}
@@ -392,11 +396,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 135597732899177968, guid: e9e09c83c96673240a68a811f26fae25,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e9e09c83c96673240a68a811f26fae25, type: 2}
   m_IsPrefabParent: 0
@@ -569,6 +568,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1814952452549078, guid: 98bfff8ec6d0d0647a0b361e11f2e441, type: 2}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1166312113887060, guid: 98bfff8ec6d0d0647a0b361e11f2e441, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1559546047062746, guid: 98bfff8ec6d0d0647a0b361e11f2e441, type: 2}
+      propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -888,20 +895,6 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_FalloffTable:
-    m_Table[0]: 0
-    m_Table[1]: 0
-    m_Table[2]: 0
-    m_Table[3]: 0
-    m_Table[4]: 0
-    m_Table[5]: 0
-    m_Table[6]: 0
-    m_Table[7]: 0
-    m_Table[8]: 0
-    m_Table[9]: 0
-    m_Table[10]: 0
-    m_Table[11]: 0
-    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
