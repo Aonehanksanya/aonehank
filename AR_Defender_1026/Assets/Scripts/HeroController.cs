@@ -12,7 +12,7 @@ public class HeroController : MonoBehaviour
     public Color detectColor;
     public Color normalColor;
     public Image attackProbeCircle;
-    public GameObject target;
+    public AttackableBehavior target;
     public float turnSmooth = 15f;
     public Animator animator;
     public string attackBool = "attack";

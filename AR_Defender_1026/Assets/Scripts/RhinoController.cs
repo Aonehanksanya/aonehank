@@ -26,6 +26,7 @@ public class RhinoController : MonoBehaviour
     private NavMeshAgent navMeshAgent;
     private AudioSource audioSource;
     private Animator animator;
+    private Collider mCollider;
 
     private bool isImpacting;
     public float hitOffset = 1;
@@ -37,6 +38,7 @@ public class RhinoController : MonoBehaviour
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         aimSlider.gameObject.SetActive(false);
+        mCollider = GetComponent<Collider>();
     }
     private void OnEnable()
     {
@@ -97,7 +99,8 @@ public class RhinoController : MonoBehaviour
             }
         }
         navMeshAgent.SetDestination(targetPos - transform.forward * hitOffset);
-        yield return null;
+          yield return null;
+        isImpacting = true;
         //等待犀牛走到目的地
         while (navMeshAgent.remainingDistance > navMeshAgent.stoppingDistance)
         {
@@ -105,13 +108,37 @@ public class RhinoController : MonoBehaviour
         }
         isImpacting = false;
     }
-    private void Update()
-    {
-        //navMeshAgent.SetDestination(target.position);
-    }
-
+   
     public void TriggerRoarSound()
     {
         audioSource.PlayOneShot(roarSound);
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(isImpacting)
+        {
+            PlayHitEffect();
+            AttackableBehavior attackable = other.GetComponent<AttackableBehavior>();
+            if(attackable)
+            {
+                attackable.Hurt(impactDamage);
+            }
+        }
+    }
+    private void PlayHitEffect()
+    {
+        audioSource.PlayOneShot(impactSound);
+        explosionEffect.Play();
+    }
+
+    public void OnDead()
+    {
+        StopAllCoroutines();
+        aimSlider.gameObject.SetActive(false);
+        navMeshAgent.enabled = false;
+        audioSource.PlayOneShot(deadSound);
+        animator.SetTrigger(deadTrigger);
+        mCollider.enabled = false;
+
     }
 }
