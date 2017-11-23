@@ -98,6 +98,7 @@
     <Compile Include="Assets\Scripts\AIMoveBehavior.cs" />
     <Compile Include="Assets\Scripts\AttackableBehavior.cs" />
     <Compile Include="Assets\Scripts\ClickToMove.cs" />
+    <Compile Include="Assets\Scripts\CrystalController.cs" />
     <Compile Include="Assets\Scripts\HeroController.cs" />
     <Compile Include="Assets\Scripts\RagdollBehavior.cs" />
     <Compile Include="Assets\Scripts\RhinoController.cs" />
